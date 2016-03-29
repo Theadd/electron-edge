@@ -36,6 +36,8 @@ please read this issue: https://github.com/kexplo/electron-edge/issues/2
 
 Edge.js: .NET and Node.js in-process [![Build Status](https://travis-ci.org/tjanczuk/edge.svg)](https://travis-ci.org/tjanczuk/edge)
 ====
+
+**NEW** Edge.js is now on Slack at https://edgejs.slack.com. Join [here](https://webtask.it.auth0.com/api/run/tjanczuk/edgejs-slack-invite). 
  
 An edge connects two nodes. This edge connects Node.js and .NET. V8 and CLR/CoreCLR/Mono - in process. On Windows, MacOS, and Linux. 
 
@@ -67,7 +69,7 @@ using EdgeJs;
 
 class Program
 {
-    public static async void Start()
+    public static async Task Start()
     {
         var func = Edge.Func(@"
             return function (data, callback) {
@@ -80,7 +82,7 @@ class Program
 
     static void Main(string[] args)
     {
-        Task.Run((Action)Start).Wait();
+        Start().Wait();
     }
 }
 ```
@@ -1449,7 +1451,7 @@ using EdgeJs;
 
 class Program
 {
-    public static async void Start()
+    public static async Task Start()
     {
         var func = Edge.Func(@"
             return function (data, callback) {
@@ -1462,7 +1464,7 @@ class Program
 
     static void Main(string[] args)
     {
-        Task.Run((Action)Start).Wait();
+        Start().Wait();
     }
 }
 ```
